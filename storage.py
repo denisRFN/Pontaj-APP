@@ -1,8 +1,9 @@
 import requests
 from datetime import datetime
 import certifi
-BASE_URL = "https://prsonalpontaj-api-h8d4d4c7efe0dwh9.westeurope-01.azurewebsites.net"
+import os
 import urllib3
+BASE_URL = os.getenv("PONTAJ_API_URL", "http://127.0.0.1:8000")
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def save_hours(overtime_data, permission_data):
@@ -46,4 +47,5 @@ def load_calendar_events(zile_prezente, zile_concediu, zile_wfh):
         zile_concediu.add(datetime.strptime(day_str, "%Y-%m-%d").date())
 
     for day_str in data.get("wfh", []):
+
         zile_wfh.add(datetime.strptime(day_str, "%Y-%m-%d").date())
