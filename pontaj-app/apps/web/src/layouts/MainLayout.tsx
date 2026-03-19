@@ -35,7 +35,7 @@ export default function MainLayout({ children }: Props) {
     <div className="h-screen flex bg-slate-900 text-white">
       <aside className="w-64 bg-slate-800 p-6 flex flex-col border-r border-slate-700">
         <h1 className="text-2xl font-bold mb-10">
-          Pontaj System
+          Work Pulse
         </h1>
 
         <nav className="flex flex-col gap-3">
